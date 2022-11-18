@@ -1,3 +1,24 @@
 body {
     background-color: rgba(79, 62, 62, 0.47);
 }
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 70vw;
+    margin : auto;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 3rem;
+}
+
+.pokemonItem {
+
+   max-width: 200px;
+
+}
+.pokemonItem img {
+    width: 100%;
+    border-radius: 10px;
+}

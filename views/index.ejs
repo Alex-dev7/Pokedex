@@ -3,5 +3,18 @@
    <%- include('./partials/head.ejs') %>
 <body>
     <h1>POKEMONS</h1>
+
+    <div class="container">
+
+       <% for(let i = 0; i < data.length; i++) { %>
+
+        <div class="pokemonItem"><img src="<%= data[i].img  %>"><p><%= data[i].name  %> </p></div>
+
+        <% } %> 
+
+    </div>
+
+
+
 </body>
 </html>
