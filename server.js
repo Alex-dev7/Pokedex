@@ -40,7 +40,8 @@ app.get('/pokemon/new', (req, res) => {
 
 //---------- CREATE -------------//
 app.post('/pokemon', (req, res) => {
-   
+    Pokemon.push(req.body)
+   res.redirect('/pokemon')
 })
 
 

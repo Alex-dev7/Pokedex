@@ -3,5 +3,35 @@
    <%- include('./partials/head.ejs') %>
 <body>
     <h1>new</h1>
+    <a class="back-button" href="/pokemon"><button>&#8678</button></a>
+
+    <div class="new-container">
+        <form action="/pokemon" method="POST">
+            <fieldset>
+                <label>Name:</label>
+                <input type="text" name="name" >
+                <label>Image:</label>
+                <input type="text" name="url" placeholder="url">
+                <label>Type:</label>
+                <input type="text" name="type " >
+                <label>Id:</label>
+                <input type="number" name="id" >
+            </fieldset>
+            <fieldset>
+                <label>hp</label>
+                <input type="number" name="hp" >
+                <label>attack</label>
+                <input type="number" name="attack" >
+                <label>spattack</label>
+                <input type="number" name="spattack" >
+                <label>spdefense</label>
+                <input type="number" name="spdefense" >
+                <label>speed</label>
+                <input type="number" name="speed" >
+            </fieldset>
+            <input id="submit" type="submit" value="CREATE">
+
+        </form>
+    </div>
 </body>
 </html>

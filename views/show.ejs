@@ -7,7 +7,6 @@
         <div class="ball">
             <div class="ball-content">
                 <div class="show-banner">
-                    
                     <img src="<%- data.img  %> " alt="<%= data.name%> image">
                     <p id="id">ID: <%= data.id %> </p>
                 </div>
@@ -19,11 +18,9 @@
                     <div class="type-container">
                         <h4>Type:</h4>
                         <ul class="type">
-                             
                              <% for(let i = 0; i < data.type.length; i++) { %>
                              <li><%= data.type[i]  %> </li> 
                              <% } %> 
-                             
                         </ul>
                     </div>
                    
@@ -38,11 +35,7 @@
    
                          </div>
 
-                     <div class="extra">
-                        <p><%= data.misc.classification  %> </p>
-                       
-
-                     </div>
+                   
                </div>
             </div>
              
