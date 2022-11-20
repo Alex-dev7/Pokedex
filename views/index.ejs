@@ -2,19 +2,20 @@
 <html lang="en">
    <%- include('./partials/head.ejs') %>
 <body>
-    <h1>POKEMONS</h1>
+    <h1>POKEDEX</h1>
 
     <div class="container">
 
        <% for(let i = 0; i < data.length; i++) { %>
 
         <div class="pokemonItem">
-            <p><%= data[i].name  %> </p>
+            
             <a href="/pokemon/<%- i%> "><img src="<%= data[i].img  %>" alt="<%= data[i].name%> image"></a>
-            <div class="controlers">
+            <div class="controllers">
                 <button>edit</button>
                 <button>delete</button>
             </div>
+           
         
         
         </div>
