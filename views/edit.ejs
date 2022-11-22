@@ -3,5 +3,39 @@
    <%- include('./partials/head.ejs') %>
 <body>
     <h1>edit</h1>
+    <a class="back-button" href="/pokemon"><button>&#8678</button></a>
+    <h2>Update <%= pokemon.name%></h2>
+    <div class="new-container">
+        <form action="/pokemon/<%= index%>?_method=PUT" method="POST">
+            <fieldset>
+                <label>Name:</label>
+                <input type="text" name="name" value="<%= pokemon.name %>">
+                <label>Image:</label>
+                <input type="text" name="img" placeholder="url" value="<%= pokemon.img %>">
+                <label>Type:</label>
+                <input type="text" name="type" value="<%= pokemon.type %>">
+                <label>Id:</label>
+                <input type="text" name="id" value="<%= pokemon.id%>">
+                <label>Classification:</label>
+                <input type="text" name="classification" value="<%=  pokemon.misc.classification%>">
+            </fieldset>
+
+            <fieldset>
+                <label>hp</label>
+                <input type="text" name="hp" value="<%= pokemon.stats.hp %>">
+                <label>attack</label>
+                <input type="text" name="attack" value="<%= pokemon.stats.attack %>">
+                <label>spattack</label>
+                <input type="text" name="spattack" value="<%= pokemon.stats.spattack %>">
+                <label>spdefense</label>
+                <input type="text" name="spdefense" value="<%= pokemon.stats.spdefense %>">
+                <label>speed</label>
+                <input type="text" name="speed" value="<%= pokemon.stats.speed %>">
+                
+            </fieldset>
+            <input id="submit" type="submit" value="UPDATE">
+
+        </form>
+    </div>
 </body>
 </html>

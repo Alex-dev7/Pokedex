@@ -4,7 +4,6 @@
 <body>
     <h1>POKEDEX</h1>
    <a class="create-button" href="/pokemon/new"><button>Create POKEMON</button></a>
-   <input type="search" id="search" placeholder="Find Pokemon">
     <div class="container">
    
        <% for(let i = 0; i < data.length; i++) { %>
@@ -13,24 +12,22 @@
             
             <a href="/pokemon/<%- i%> "><img src="<%= data[i].img  %>" alt="<%= data[i].name%> image"></a>
             <div class="controllers">
-                <a href="/pokemon/<%=i  %> /edit/"><button>edit</button></a>
-                <button>
+
+                <a class="button" href="/pokemon/<%= i%>/edit/"><button>edit</button></a>
+
+
+                <button class="button">
                     <form action="/pokemon/<%= i %>?_method=DELETE" method="POST">
                     <input type="submit" value="Delete">
                  </form>
                 </button>
             </div>
             
-           
-        
-        
         </div>
 
         <% } %> 
 
     </div>
-
-
 
 </body>
 </html>

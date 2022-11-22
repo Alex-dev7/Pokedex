@@ -30,54 +30,62 @@ h1 {
     border: 4px solid black;
     /* border-radius: 20px; */
     padding: 3rem;
-    background-color: #3e000047;
+    background-image: url('https://i.pinimg.com/474x/2e/b7/7a/2eb77afa6dc9669a7d5f3a6ce77e1e07.jpg');
+    background-size: cover;
 }
 
 .pokemonItem {
    display: flex;
    flex-direction: column;
    justify-content: flex-end;
-   max-width: 150px;
-   
+   max-width: 170px;
+   max-height: 250px;
+   background-color: white;
+   contain:content;
    margin: 1rem;
-
-}
-.pokemonItem p {
-    text-align: center;
-}
-.pokemonItem img {
-    max-width: 100%;
-    
-    border-radius: 10px;
+   border-radius: 10px;
     position: relative;
     transition: transform 250ms;
     cursor: pointer;
     opacity: 0.6;
 }
-.pokemonItem img:hover {
+.pokemonItem:hover {
     transform: translateY(-5px);
     box-shadow: 3px 3px 10px black;
     opacity: 1;
 }
-.pokemonItem img:active{
+.pokemonItem:active{
     transform: translateY(-1px);
 }
-
+.pokemonItem p {
+    text-align: center;
+}
+.pokemonItem img {
+    max-height: 220px;
+    width: 100%;
+    
+    
+    
+}
 .controllers {
-   
+   background-color: #b29b188f;
    display: flex;
    justify-content: space-evenly;
 }
-.controllers button {
+.controllers .button form{
+    border: none;
+}
+.controllers .button {
+    text-align: center;
     margin-top: .5rem;
     border: none;
     width: 48%;
     gap: 2%;
-    background-color: rgba(208, 35, 35, 0.396);
+    background-color: transparent;
     color: rgb(255, 255, 255);
     height: 2rem;
 }
-.controllers button:hover {
+.controllers .button:hover {
     background-color: rgb(208, 35, 35);
   
     

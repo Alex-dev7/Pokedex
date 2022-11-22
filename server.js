@@ -3,6 +3,7 @@ const express = require('express')
 const Pokemon = require('./models/pokemon')
 const methodOverride = require('method-override')
 // const helpers = require('./ejs-helpers')
+const helpers = require('./helpers')
 
 //express app object
 const app = express()
@@ -26,7 +27,8 @@ app.get('/', (req, res) => {
 //---------- INDEX -------------//
 app.get('/pokemon', (req, res) => {
     res.render('index.ejs', {
-        data: Pokemon
+        data: Pokemon,
+        index: req.params.id
     })
 })
 
@@ -48,13 +50,35 @@ app.post('/pokemon', (req, res) => {
 
 //---------- EDIT -------------//
 app.get('/pokemon/:id/edit', (req, res) => {
-    res.render('edit.ejs')
+    res.render("edit.ejs", {
+        pokemon: Pokemon[req.params.id],
+        index: req.params.id
+
+    })
+     
     
 })
 
 
 //---------- UPDATE -------------//
 app.put('/pokemon/:id', (req, res) => {
+       
+         //updating the pokemon
+        //  const updatedPokemon = parseFormObj(req.body)
+        const pokemon = req.body
+        helpers.renderData(Pokemon[req.params.id], pokemon)
+        // console.log(req.body)
+        // console.log(Pokemon[req.params.id])
+        // const pokemon = Pokemon[req.params.id]
+       
+        
+        // Pokemon[req.params.id].misc = req.body.classification
+            // Pokemon[req.params.id]= req.body
+            // console.log(typeof req.body)
+            
+         
+        // redirect user back to index
+         res.redirect('/pokemon')
     
 
 })
@@ -75,8 +99,9 @@ app.get('/pokemon/:id', (req, res) => {
      
     res.render('show.ejs', {
 
-         data: Pokemon[req.params.id]
-        
+         pokemon: Pokemon[req.params.id],
+         index: req.params.id,
+         helpers
         })
 })
 
