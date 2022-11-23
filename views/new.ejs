@@ -8,18 +8,21 @@
     <div class="new-container">
         <form action="/pokemon" method="POST">
             <fieldset>
+                <h4>GENERAL</h4>
                 <label>Name:</label>
                 <input type="text" name="name" >
                 <label>Image:</label>
                 <input type="text" name="img" placeholder="url">
                 <label>Type:</label>
-                <input type="text" name="type" >
+                <input type="text" name="type[]" ><button class="tagButton">+</button><br>
+                <div class="tagContainer"> </div>
                 <label>Id:</label>
                 <input type="text" name="id" >
                 <label>Classification:</label>
                 <input type="text" name="classification" >
             </fieldset>
             <fieldset>
+                <h4>STATS</h4>
                 <label>hp</label>
                 <input type="text" name="hp" >
                 <label>attack</label>
@@ -33,6 +36,7 @@
                 <label>speed</label>
                 <input type="text" name="speed" >
             </fieldset>
+            
             <input id="submit" type="submit" value="CREATE">
 
         </form>

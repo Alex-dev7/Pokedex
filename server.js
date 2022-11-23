@@ -37,13 +37,16 @@ app.get('/pokemon', (req, res) => {
 app.get('/pokemon/new', (req, res) => {
 
     res.render('new.ejs')
+    
 })
 
 
 //---------- CREATE -------------//
 app.post('/pokemon', (req, res) => {
+
     Pokemon.push(req.body)
    res.redirect('/pokemon')
+   console.log(req.body)
 })
 
 
@@ -54,8 +57,7 @@ app.get('/pokemon/:id/edit', (req, res) => {
         pokemon: Pokemon[req.params.id],
         index: req.params.id
 
-    })
-     
+    })  
     
 })
 
@@ -64,22 +66,12 @@ app.get('/pokemon/:id/edit', (req, res) => {
 app.put('/pokemon/:id', (req, res) => {
        
          //updating the pokemon
-        //  const updatedPokemon = parseFormObj(req.body)
         const pokemon = req.body
         helpers.renderData(Pokemon[req.params.id], pokemon)
         // console.log(req.body)
-        // console.log(Pokemon[req.params.id])
-        // const pokemon = Pokemon[req.params.id]
-       
-        
-        // Pokemon[req.params.id].misc = req.body.classification
-            // Pokemon[req.params.id]= req.body
-            // console.log(typeof req.body)
-            
-         
+   
         // redirect user back to index
          res.redirect('/pokemon')
-    
 
 })
 

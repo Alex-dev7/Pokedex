@@ -2,32 +2,32 @@
 <html lang="en">
    <%- include('./partials/head.ejs') %>
 <body>
-    <h1>POKEDEX</h1>
+    <h1 id="top">POKEDEX</h1>
    <a class="create-button" href="/pokemon/new"><button>Create POKEMON</button></a>
     <div class="container">
    
        <% for(let i = 0; i < data.length; i++) { %>
 
         <div class="pokemonItem">
-            
+            <p class="name"><%= data[i].name%></p>
             <a href="/pokemon/<%- i%> "><img src="<%= data[i].img  %>" alt="<%= data[i].name%> image"></a>
             <div class="controllers">
 
                 <a class="button" href="/pokemon/<%= i%>/edit/"><button>edit</button></a>
 
 
-                <button class="button">
+                <a class="button">
                     <form action="/pokemon/<%= i %>?_method=DELETE" method="POST">
-                    <input type="submit" value="Delete">
+                    <input id="input" type="submit" value="delete">
                  </form>
-                </button>
+                </a>
             </div>
             
         </div>
 
         <% } %> 
-
+  
     </div>
-
+  <a href="#top"><button id="scroll-top">Scroll To Top</button></a> 
 </body>
 </html>

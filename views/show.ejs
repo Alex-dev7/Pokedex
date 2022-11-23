@@ -19,8 +19,9 @@
                         <h4>Type:</h4>
                         <ul class="type">
                              <% for(let i = 0; i < pokemon.type.length; i++) { %>
-                             <li><%= pokemon.type[i]  %> </li> 
-                             <% } %> 
+                             <li><%= pokemon.type[i] %> </li> 
+
+                             <%} %> 
                         </ul>
                     </div>
                    
@@ -58,7 +59,7 @@
             </div>
              
         </div>
-        <a href="/pokemon/<%= index%>/edit/"><button>edit</button></a>
+        <a id="show-edit" href="/pokemon/<%= index%>/edit/"><button>edit</button></a>
     </div>
 
 

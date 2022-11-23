@@ -22,15 +22,6 @@ function renderData(obj, data) {
     }
 }
 
-// function renderNewData(obj) {
-//     const newObjInArray = {}
-//     for(let key in obj) {
-//        if(key === "classification") {
-//            newObjInArray.misc.classification = obj[key].classification
-//        } else if(key === "hp" || "attack" || "defence")
-//     }
-// }
-
 function checkIfTrue(item){
     if(item === true){
         return true
